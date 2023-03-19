@@ -68,7 +68,7 @@ var maxProductDifference = function (nums) {
 // leetcode
 
 var maxProductDifference = function (nums) {
-  let min = 1e4,
+  let min = 1e4, // 1*10^4 = 10000
     prevMin = min;
   let max = 0,
     prevMax = 0;
