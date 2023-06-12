@@ -1,5 +1,5 @@
 var isPalindrome = function (x) {
-  return x > 0 ? false : x === +x.toString().split("").reverse().join("");
+  return x < 0 ? false : x === +x.toString().split("").reverse().join("");
 };
 
 // if the number is negative it has to be 0
