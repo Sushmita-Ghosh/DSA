@@ -2,11 +2,14 @@
 
 // https://www.youtube.com/watch?v=1sHkfaryP3w
 
-// A good meal is a meal that contains exactly two different food items with a sum of deliciousness equal to a power of two.
+// A good meal is a meal that contains exactly two different food items
+// with a sum of deliciousness equal to a power of two.
 
 // You can pick any two different foods to make a good meal.
 
-// Given an array of integers deliciousness where deliciousness[i] is the deliciousness of the i​​​​​​th​​​​​​​​ item of food, return the number of different good meals you can make from this list modulo
+// Given an array of integers deliciousness where deliciousness[i]
+// is the deliciousness of the i​​​​​​th​​​​​​​​ item of food,
+// return the number of different good meals you can make from this list modulo
 // 1
 // 0
 // 9
@@ -95,7 +98,8 @@ class Solution {
  * @param {9
 
 
-This is (kind of?) clever use of the tilde (~) operator, but it just leads to confusion. The ~ (effectively) adds one to the number and flips the sign.
+This is (kind of?) clever use of the tilde (~) operator, but it just leads to confusion. 
+The ~ (effectively) adds one to the number and flips the sign.
 
 ~0 === -1
 
