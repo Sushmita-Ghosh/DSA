@@ -93,3 +93,22 @@ var twoSum = function (nums, target) {
 
   return [];
 };
+
+// roadside coder solution
+// using JS objects
+
+const twoSum = (nums, target) => {
+  const obj = {}; // the obj we want to return
+
+  for (let i = 0; i < nums.length; i++) {
+    const n = nums[i]; // current element
+
+    // if the target-current element exists in our object,
+    // we are going to return the index of both
+    if (obj[target - n] >= 0) {
+      return [obj[target - n], i];
+    } else {
+      obj[n] = i; // else we will put the object - with its index in array
+    }
+  }
+};
