@@ -94,3 +94,4 @@ var maxSubArray = function (nums) {
 };
 
 // time complexity - O(n)
+// space complexity - O(1)
