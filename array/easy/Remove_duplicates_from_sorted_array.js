@@ -53,8 +53,51 @@ function removeDuplicatesSecond(nums) {
 //  i = 4  --> but there are 5 elements --> 0 se start hui thi
 //  j = 9
 
-console.log(removeDuplicatesSecond([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
-console.log(removeDuplicatesSecond([1, 1, 2]));
+// console.log(removeDuplicatesSecond([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+// console.log(removeDuplicatesSecond([1, 1, 2]));
 
 // Time: O(n)
 // Space: O(1) // inplace - no extra space
+
+// Striver
+// Brute force
+
+// create a set of the arr
+// loop through the arr and modify the elements - this is however not inplace- we need extra space
+
+const removeDuplicatesBruteForce = (nums) => {
+  let set = new Set(nums);
+  // console.log(set);
+  // for (let ele of nums) {
+  //   set.add(ele);
+  // }
+
+  return set.size;
+};
+
+// o(nlogn) + o(n)
+// o(n)  -> due to set
+
+// console.log(removeDuplicatesBruteForce([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+// Optimised Approach without extra memory
+
+const removeDuplicatesOptimal = (nums) => {
+  // we will take two pointers i and j ; i=0; j=i+1
+  // we will increase j one by one and whenever there is different element in arr[i] & arr[j]
+  // we will update arr[i+1] with arr[j] then increment i --> return i+1
+
+  let i = 0;
+  for (let j = 1; j < nums.length; j++) {
+    if (nums[j] !== nums[i]) {
+      // interchange value here
+      nums[i + 1] = nums[j];
+      i++;
+    }
+  }
+
+  return i + 1;
+};
+
+console.log(removeDuplicatesOptimal([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+console.log(removeDuplicatesOptimal([1, 1, 2]));
