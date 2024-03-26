@@ -51,6 +51,7 @@ function secondLargestOptimised(arr) {
 // Time complexity : O(n)
 // Space complexity : O(1) --> it is not creating an array only returning a value --> secondLargest
 
+//https://www.codingninjas.com/studio/problems/ninja-and-the-second-order-elements_6581960?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
 // Strivers Approach
 
 // Brute Force
