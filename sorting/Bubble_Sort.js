@@ -27,6 +27,7 @@
 // one complete iteration will bring the max to last
 
 // first loop runs till n-1 as we need two swap elements
+// https://takeuforward.org/data-structure/bubble-sort-algorithm/
 
 const bubbleSort = (n, arr) => {
   for (let i = 0; i < n - 1; i++) {
