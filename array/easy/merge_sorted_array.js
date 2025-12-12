@@ -72,3 +72,55 @@ var mergeOptimized = function (nums1, m, nums2, n) {
 
 // Time Complexity: 0(m + n)
 // Space Complexity: O(1)
+
+
+
+
+/**
+ * Merge 
+ */
+
+
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
+var merge = function(nums1, m, nums2, n) {
+   let copynum1 = nums1.slice(0,m)
+   console.log(copynum1)
+   let k =0; let j=0;
+
+   for(i=0;i<n+m;i++){
+        if(k==m || j==n){
+            break;
+        } else {
+            if(copynum1[k]<nums2[j]){
+                nums1[i]=copynum1[k]
+                k++
+            } else {
+                nums1[i]=nums2[j]
+                j++
+            }
+        }
+
+    
+
+   }
+
+
+   if(j!==n){
+    for(let i=m+j; i<n+m; i++){
+        nums1[i]=nums2[j]
+        j++
+    }
+   } else if(k!==m){
+    for(let i=k+n;i<n+m;i++){
+        nums1[i]=copynum1[k]
+        k++
+    }
+   }
+
+};
