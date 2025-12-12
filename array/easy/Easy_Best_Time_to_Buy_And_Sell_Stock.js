@@ -62,3 +62,35 @@ var maxProfit = function (prices) {
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 console.log(maxProfit([7, 6, 4, 3, 1]));
+
+
+
+/** 
+ * OPTIMIZED SOLUT'n
+ * 
+ * We have to take into account the min price value and max profit
+ */
+
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let min = prices[0]; // min price
+    let maxProfit = 0
+
+    for (let i = 0; i< prices.length; i++){
+        /** If the max profit is less than the new price we are calculating then
+        update it */
+        if(maxProfit < prices[i]-min) {
+            maxProfit = prices[i]-min
+        }
+        /** If the current price is less than the min price we assumed, we need to 
+        update it as well */
+        if(prices[i]<min){
+            min=prices[i]
+        }
+    }
+    return maxProfit
+};
