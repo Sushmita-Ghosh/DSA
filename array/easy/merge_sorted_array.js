@@ -88,6 +88,9 @@ var mergeOptimized = function (nums1, m, nums2, n) {
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
+
+
+/** With extra space */
 var merge = function(nums1, m, nums2, n) {
    let copynum1 = nums1.slice(0,m)
    console.log(copynum1)
@@ -120,6 +123,74 @@ var merge = function(nums1, m, nums2, n) {
     for(let i=k+n;i<n+m;i++){
         nums1[i]=copynum1[k]
         k++
+    }
+   }
+
+};
+
+
+/** With extra space but a little better */
+
+var merge = function(nums1, m, nums2, n) {
+   let nums1copy= nums1.slice(0,m)
+
+   let p1=0;
+   let p2=0;
+
+   for (let i =0; i<n+m; i++){
+    /**
+     * here p2>=n if one of them is empty say nums1 = [1] and nums2=[]
+     * In this case we have p2=0 and n =0 but we have to copy nums1 right?
+     * so it needs to go to first loop 
+     */
+    if(p2>=n || (nums1copy[p1]<nums2[p2] && p1<m)){
+        nums1[i]=nums1copy[p1]
+        p1++
+    } else {
+        nums1[i]=nums2[p2]
+        p2++
+    }
+   }
+
+};
+
+/** Without extra space */
+
+/**
+ * Essentially if we start from front we will lose nums1 values, hence
+ * we are having to copy
+ * But if we say fill it in reverse order where the extra 0's are there
+ * we will not loose the values.
+ * SO we don't need to copy the array
+ */
+
+
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
+var merge = function(nums1, m, nums2, n) {
+   let p1 = m-1 // starting from lengths
+   let p2 = n-1
+
+   for (let i = m+n-1; i>=0; i--){
+    /**If p2 is out of bounds, we don't need to do anything */
+    if(p2<0){
+        break
+    }
+
+    /** only exexute the first condition , till p1>=0 as soon as it becomes out of bounds
+     * we need to copy rest from p2
+     */
+    if(p1>=0 && nums1[p1]>nums2[p2]){
+        nums1[i]=nums1[p1]
+        p1--
+    }else {
+        nums1[i]=nums2[p2]
+        p2-- 
     }
    }
 
