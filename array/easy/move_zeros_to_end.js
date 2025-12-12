@@ -45,17 +45,52 @@ var moveZeroesSecond = function (nums) {
     }
   }
   return nums;
-  let i = 0;
-  for (let j = 1; j < nums.length; j++) {
-    if (nums[j] !== 0) {
-      let temp = nums[i];
-      nums[i] = nums[j]; // change the values of nums[i] & nums[j] // swap
-      nums[j] = temp;
-      i++;
-    }
-  }
-  return nums;
+  // let i = 0;
+  // for (let j = 1; j < nums.length; j++) {
+  //   if (nums[j] !== 0) {
+  //     let temp = nums[i];
+  //     nums[i] = nums[j]; // change the values of nums[i] & nums[j] // swap
+  //     nums[j] = temp;
+  //     i++;
+  //   }
+  // }
+  // return nums;
 };
 
 console.log(moveZeroesSecond([0, 1, 0, 3, 12]));
 console.log(moveZeroesSecond([0, 1, 0, 3, 12]));
+
+
+
+
+/**
+ * My solution
+ */
+
+
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+    let k =0 // contain the pos where we need to fill next non zero number
+    for(let i=0; i<nums.length; i++){
+        if(nums[i]!==0){
+            nums[k]=nums[i]
+            k++;
+        }
+    }
+
+  
+    // if(k<nums.length){
+    //     for(i=k; i<nums.length; i++){
+    //         nums[k]=0
+    //         k++;
+    //     }
+    // }
+
+      /** Once the array traversal ends  for the rest fill with 0 */
+    for(let i =k; i<nums.length; i++){
+      nums[i]=0
+    }
+};

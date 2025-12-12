@@ -28,3 +28,48 @@ var missingNumber = function (nums) {
 
   return sum;
 };
+
+/**
+ * BRUTE FORCE
+ *
+ * 1. Sort the array
+ * 2. Check if each number is nextnumber-1
+ * if not that's the missing number (next number)
+ */
+
+var missingNumber = function (nums) {
+  let n = nums.length;
+
+  let sortedNum = nums.sort((a, b) => a - b);
+
+  for (let i = 0; i <= n; i++) {
+    if (sortedNum[i] != sortedNum[i + 1] - 1) {
+      return i + 1;
+    }
+  }
+};
+
+// o(nlogn)
+
+/**
+ * Since these are disntict natural numbers
+ * what we can do is sum the numbers till n (sum of n natural numbers )
+ * then sum the array
+ * and return the difference
+ */
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var missingNumber = function (nums) {
+  let n = nums.length;
+  let totalSum = (n * (n + 1)) / 2;
+  let partialSum = 0;
+
+  for (let i = 0; i < n; i++) {
+    partialSum = partialSum + nums[i];
+  }
+
+  return totalSum - partialSum;
+};
