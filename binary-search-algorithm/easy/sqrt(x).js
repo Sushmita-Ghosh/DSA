@@ -40,7 +40,9 @@ var mySqrt = function (x) {
 
 
 /** 2. USing Linear search */
+// Time Complexity: O(n/2) = O(n)
 
+// Space Complexity: O(1)
 
 
 
@@ -89,3 +91,8 @@ var mySqrt = function (x) {
     return r;
 
 };
+
+
+// Time Complexity: O(logx)
+
+// Space Complexity: O(1)
