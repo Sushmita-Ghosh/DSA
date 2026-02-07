@@ -4,6 +4,8 @@ This document explains **each step** of the solution that finds the **starting a
 
 ---
 
+## NOTE: This is a non decreasing array (so it contains duplicates)
+
 ## Problem Overview
 
 Given:
