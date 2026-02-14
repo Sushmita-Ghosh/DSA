@@ -1,3 +1,4 @@
+````js
 var strStr = function(haystack, needle) {
     return haystack.indexOf(needle)
 };
@@ -5,7 +6,7 @@ var strStr = function(haystack, needle) {
 /** Sliding Window */
 /** We need to run the loop from n - window size */
                 // i+j , i+j+1; i+j+2
-// haystack = dgdgsadjggjgjgjg 
+// haystack = dgdgsadjggjgjgjg
             //    i
 // needle = sad
 //          j
@@ -32,7 +33,7 @@ var strStr = function (haystack, needle) {
         }
         // j will be at the length , if the whole needle is there in haystack
         if(j === m){
-            return i 
+            return i
         }
     }
 
@@ -41,3 +42,29 @@ var strStr = function (haystack, needle) {
 
 // o(n) * o(m)
 // Space = o(1)
+
+
+/** KMP - To Search a string inside another string */
+
+//  preprocessing of needle
+//  n = onions
+// prefix =  "", o, on, oni, onio, onion, onions
+// suffix =  "", "s", ns, ons, ions, nions, onions
+
+//proper prefix: "", o, on, oni, onio, onion,
+// proper suffix : "", "s", ns, ons, ions, nions,
+
+
+
+// Step 1: We need to find -> Length of longest prefix that is also a suffix (LPS)
+// onion = on at begigging(pref) & on at end(suff)
+
+// n = [onion]s
+// LPS = [0,0,0,1,2,0]
+
+// n = a b c d a b e a b f
+// LPS= [0,0,0,1,2, 0, 1,2,0]
+```js
+
+![alt text](image.png)
+````
