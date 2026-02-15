@@ -66,5 +66,5 @@ var strStr = function (haystack, needle) {
 // LPS= [0,0,0,1,2, 0, 1,2,0]
 ```js
 
-![alt text](image.png)
+
 ````
