@@ -69,16 +69,9 @@ var strStr = function (haystack, needle) {
 
 ````
 
-
-
-
 ### KMP — Building the LPS (Longest Prefix Suffix) Array
 
 <img width="1395" height="782" alt="image" src="https://github.com/user-attachments/assets/f822f6b7-59f2-4246-9d17-f1df308d1f69" />
-
-
-
-
 
 The **LPS array** stores, for each index `j`, the length of the longest proper prefix of the pattern that is also a suffix ending at `j`.
 
@@ -130,6 +123,60 @@ If `needle[i] == needle[j]`:
 ---
 
 ### Step 2:
+
 <img width="1117" height="814" alt="image" src="https://github.com/user-attachments/assets/61e6f5cc-24f1-4146-9db2-5b853a8afc0b" />
 
+```js
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function (haystack, needle) {
+  let n = haystack.length;
+  let m = needle.length;
+  let lps = [0];
 
+  /* 1. Construct LPS - only on needle */
+  let i = 0;
+  let j = 1;
+
+  while (j < m) {
+    if (needle[i] == needle[j]) {
+      lps[j] = i + 1;
+      i += 1;
+      j += 1;
+    } else {
+      if (i == 0) {
+        lps[j] = 0; // no common prefix
+        j += 1;
+      } else {
+        /**  go one posn back and recompare */
+        i = lps[i - 1];
+      }
+    }
+  }
+
+  /** 2. Check the string */
+  i = j = 0;
+
+  while (i < n) {
+    if (haystack[i] === needle[j]) {
+      i += 1;
+      j += 1;
+    } else {
+      if (j == 0) {
+        i += 1; // haystack increment
+      } else {
+        j = lps[j - 1];
+      }
+    }
+
+    if (j === m) {
+      return i - m;
+    }
+  }
+
+  return -1;
+};
+```
