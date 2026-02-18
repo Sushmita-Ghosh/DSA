@@ -59,8 +59,17 @@ var getIntersectionNode = function (headA, headB) {
     }
 
     return pA /**There will always be an intersection */
-
-
 };
 
 
+
+/**
+ * let 2 pointers run till they are null or end of ll
+ * at a time the shorter pointer will reach first 
+ * once it reaches point it to the start of the other ll and let keep incrementing
+ * now the 2nd pointer after travelling the distance will reach null 
+ * once it reaches null move to the head of other ll
+ * [At this point they will coincide for sure - why becoz it's evident that pB at initial point of (when pA started pointing to longer list)
+ * will only travell the difference left - and when we change it falls back to the point they meet]
+ * Hence we will not have to calculate length and skip node
+ */
