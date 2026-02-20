@@ -71,12 +71,20 @@ var getIntersectionNode = function (headA, headB) {
  * will only travell the difference left - and when we change it falls back to the point they meet]
  * Hence we will not have to calculate length and skip node
  */
-
-
 ```
 
 <img width="1838" height="820" alt="image" src="https://github.com/user-attachments/assets/761f1918-74a3-4e34-a36e-54284243eed2" />
 
-
 ```js
+var getIntersectionNode = function (headA, headB) {
+  let pA = headA;
+  let pB = headB;
+
+  while (pA != pB) {
+    pA = pA == null ? headB : pA.next;
+    pB = pB == null ? headA : pB.next;
+  }
+
+  return pA;
+};
 ```
