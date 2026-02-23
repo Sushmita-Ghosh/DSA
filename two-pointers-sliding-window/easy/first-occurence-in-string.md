@@ -72,3 +72,91 @@ var strStr = function (haystack, needle) {
 
 
 
+# KMP — Building the LPS (Longest Prefix Suffix) Array
+
+The **LPS array** stores, for each index `j`, the length of the longest proper prefix of the pattern that is also a suffix ending at `j`.
+
+---
+
+## Key Variables
+
+- `m` = length of the pattern (needle)
+- `lps[0] = 0`
+- `i` = length of the previous longest prefix-suffix (start at 0)
+- `j` = current index (start at 1)
+
+---
+
+## Algorithm (Iterative Construction)
+
+Process while `j < m`:
+
+### ✅ Case 1: Characters Match
+
+If `pattern[i] == pattern[j]`:
+
+- Increase matched length  
+  `i = i + 1`
+- Set LPS value  
+  `lps[j] = i`
+- Move forward  
+  `j = j + 1`
+
+---
+
+### ❌ Case 2: Characters Do Not Match
+
+#### If `i != 0`
+
+- Do **not** move `j`
+- Fall back using previous LPS value  
+  `i = lps[i - 1]`
+- Try matching again
+
+#### If `i == 0`
+
+- No prefix available to fall back to
+- Set  
+  `lps[j] = 0`
+- Move forward  
+  `j = j + 1`
+
+---
+
+## Intuition
+
+- `i` tracks the current length of matching prefix and suffix
+- On mismatch, reuse previously computed LPS values instead of restarting
+- This avoids rechecking characters
+
+---
+
+## Time Complexity
+
+- **O(m)** — Linear preprocessing time  
+- No character is processed more than a constant number of times
+
+---
+
+## Pseudocode
+
+```text
+m = length(pattern)
+lps[0] = 0
+i = 0
+j = 1
+
+while j < m:
+    if pattern[i] == pattern[j]:
+        i += 1
+        lps[j] = i
+        j += 1
+    else:
+        if i != 0:
+            i = lps[i - 1]
+        else:
+            lps[j] = 0
+            j += 1
+```
+
+
