@@ -130,6 +130,7 @@ If `needle[i] == needle[j]`:
 ---
 
 ### Step 2:
-<img width="1117" height="814" alt="image" src="https://github.com/user-attachments/assets/61e6f5cc-24f1-4146-9db2-5b853a8afc0b" />
+<img width="1106" height="808" alt="image" src="https://github.com/user-attachments/assets/369c0e3f-74ac-4780-8e1c-8ceda5c4bb3e" />
+
 
 
