@@ -124,7 +124,8 @@ If `needle[i] == needle[j]`:
 
 ### Step 2:
 
-<img width="1117" height="814" alt="image" src="https://github.com/user-attachments/assets/61e6f5cc-24f1-4146-9db2-5b853a8afc0b" />
+<img width="1106" height="808" alt="image" src="https://github.com/user-attachments/assets/c4132f4c-52d8-4664-b4c6-6c4adb4d1ce9" />
+
 
 ```js
 /**
