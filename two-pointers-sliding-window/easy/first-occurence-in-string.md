@@ -74,7 +74,9 @@ var strStr = function (haystack, needle) {
 
 # KMP — Building the LPS (Longest Prefix Suffix) Array
 
-<img width="1024" height="1024" alt="2705b69795984dadb60f7ce094595ea0" src="https://github.com/user-attachments/assets/c5141c20-2cfc-492d-a361-e2f704f78a2d" />
+<img width="1477" height="804" alt="image" src="https://github.com/user-attachments/assets/9ca13817-2bcc-4730-b616-1f11820a2c40" />
+
+
 
 The **LPS array** stores, for each index `j`, the length of the longest proper prefix of the pattern that is also a suffix ending at `j`.
 
