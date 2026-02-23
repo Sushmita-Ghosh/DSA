@@ -68,7 +68,7 @@ var strStr = function (haystack, needle) {
 
 
 ````
+<img width="1024" height="744" alt="image" src="https://github.com/user-attachments/assets/9d986ba7-3445-4236-abde-988e71ee7aec" />
 
 
-<img width="1310" height="758" alt="image" src="https://github.com/user-attachments/assets/df773822-65b5-4a06-9497-681e98b40798" />
 
