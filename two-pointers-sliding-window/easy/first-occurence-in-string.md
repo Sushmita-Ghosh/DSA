@@ -74,7 +74,8 @@ var strStr = function (haystack, needle) {
 
 # KMP — Building the LPS (Longest Prefix Suffix) Array
 
-<img width="1451" height="795" alt="image" src="https://github.com/user-attachments/assets/53811e56-6050-460a-88d1-9756f732b033" />
+<img width="1395" height="782" alt="image" src="https://github.com/user-attachments/assets/f822f6b7-59f2-4246-9d17-f1df308d1f69" />
+
 
 
 
