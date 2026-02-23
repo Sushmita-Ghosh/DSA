@@ -72,7 +72,7 @@ var strStr = function (haystack, needle) {
 
 
 
-# KMP — Building the LPS (Longest Prefix Suffix) Array
+### KMP — Building the LPS (Longest Prefix Suffix) Array
 
 <img width="1395" height="782" alt="image" src="https://github.com/user-attachments/assets/f822f6b7-59f2-4246-9d17-f1df308d1f69" />
 
@@ -84,7 +84,7 @@ The **LPS array** stores, for each index `j`, the length of the longest proper p
 
 ---
 
-## Key Variables
+#### Key Variables
 
 - `m` = length of the pattern (needle)
 - `lps[0] = 0`
@@ -93,7 +93,7 @@ The **LPS array** stores, for each index `j`, the length of the longest proper p
 
 ---
 
-## Algorithm (Iterative Construction)
+#### Algorithm (Iterative Construction)
 
 Process while `j < m`:
 
@@ -129,40 +129,7 @@ If `needle[i] == needle[j]`:
 
 ---
 
-## Intuition
-
-- `i` tracks the current length of matching prefix and suffix
-- On mismatch, reuse previously computed LPS values instead of restarting
-- This avoids rechecking characters
-
----
-
-## Time Complexity
-
-- **O(m)** — Linear preprocessing time  
-- No character is processed more than a constant number of times
-
----
-
-## Pseudocode
-
-```text
-m = needle.length
-lps[0] = 0
-i = 0
-j = 1
-
-while j < m:
-    if needle[i] == needle[j]:
-        i += 1
-        lps[j] = i
-        j += 1
-    else:
-        if i != 0:
-            i = lps[i - 1]
-        else:
-            lps[j] = 0
-            j += 1
-```
+### Step 2:
+<img width="1117" height="814" alt="image" src="https://github.com/user-attachments/assets/61e6f5cc-24f1-4146-9db2-5b853a8afc0b" />
 
 
