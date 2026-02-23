@@ -93,7 +93,7 @@ Process while `j < m`:
 
 ### ✅ Case 1: Characters Match
 
-If `pattern[i] == pattern[j]`:
+If `needle[i] == needle[j]`:
 
 - Increase matched length  
   `i = i + 1`
@@ -141,13 +141,13 @@ If `pattern[i] == pattern[j]`:
 ## Pseudocode
 
 ```text
-m = length(pattern)
+m = needle.length
 lps[0] = 0
 i = 0
 j = 1
 
 while j < m:
-    if pattern[i] == pattern[j]:
+    if needle[i] == needle[j]:
         i += 1
         lps[j] = i
         j += 1
