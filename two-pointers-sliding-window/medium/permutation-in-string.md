@@ -13,7 +13,9 @@ var checkInclusion = function (s1, s2) {
   let hashS = Array(26).fill(0);
   let windowSize = s1.length;
   let i = 0;
-  j = windowSize - 1; /** i => left window j => right window */
+  j = windowSize - 1; /** Here j should be the length of first window */
+  /** i => left window j => right window */
+
   /** make the string hash & window hash for first window */
   for (let i = 0; i < windowSize; i++) {
     ++hashW[s2.charCodeAt(i) - 97];
